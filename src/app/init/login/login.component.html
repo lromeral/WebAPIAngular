@@ -1,0 +1,16 @@
+<div class="text-center">
+    <form class="form-signin" #fLogin="ngForm" (submit)="login()">
+      <img class="mb-4" src="/assets/angular.jpg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <label for="inputEmail" class="sr-only">Usuario</label>
+      <input type="text" class="form-control" placeholder="Usuario" [(ngModel)]="usuario.userName" name="usuario" id="usuario"
+        required autofocus>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password" [(ngModel)]="usuario.password"
+        required>
+  
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [hidden]="!fLogin.valid">Login</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [hidden]="fLogin.valid" [disabled]="!fLogin.valid" style="cursor:not-allowed">Login</button>
+      <p class="mt-5 mb-3 text-muted">Curso Angular 2019</p>
+    </form>
+  </div>
